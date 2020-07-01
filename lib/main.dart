@@ -38,6 +38,10 @@ void main() async {
 
   await Hive.openBox('contacts');
 
+  await DataCache.init();
+
+  initializeNotificationSettings();
+
   runApp(App(update));
 
   await setUpBackgroundTasks();

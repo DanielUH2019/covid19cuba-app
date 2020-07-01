@@ -5,6 +5,7 @@
 import 'dart:developer';
 
 import 'package:covid19cuba/src/pages/pages.dart';
+import 'package:covid19cuba/src/pages/protocols_page.dart';
 import 'package:covid19cuba/src/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -47,6 +48,8 @@ class HomeDrawerWidgetState extends State<HomeDrawerWidget> {
             separator(),
             casesTableItem(),
             bulletinsDrawerItem(),
+            downloadsDrawerItem(),
+            protocolsDrawerItem(),
             contactRegistrationItem(),
             usefulPhonesItem(),
             tipsItem(),
@@ -403,6 +406,40 @@ class HomeDrawerWidgetState extends State<HomeDrawerWidget> {
           context,
           MaterialPageRoute(
             builder: (context) => FaqsPage(),
+          ),
+        );
+      },
+    );
+  }
+
+  Widget downloadsDrawerItem() {
+    return createDrawerItem(
+      context,
+      icon: Icons.cloud_download,
+      text: 'Descargas',
+      onTap: () {
+        Navigator.of(context).pop();
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => DownloadsPage(),
+          ),
+        );
+      },
+    );
+  }
+
+  Widget protocolsDrawerItem() {
+    return createDrawerItem(
+      context,
+      icon: Icons.straighten,
+      text: 'Protocolos',
+      onTap: () {
+        Navigator.of(context).pop();
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ProtocolsPage(),
           ),
         );
       },
